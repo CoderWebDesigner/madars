@@ -1,0 +1,301 @@
+
+<form class="row" [formGroup]="editStudent" (ngSubmit)="onSubmit()">
+  <div class="col-md-6">
+    <!-- Image -->
+    <div class="col-12 mb-3">
+      <div class="student-icon mx-auto py-3 custom-br position-relative">
+        <input
+          type="file"
+          #profileImg
+          class="d-none"
+          (change)="readURL($event)"
+          formControlName="photo"
+          accept="image/png, image/jpeg"
+        />
+        <!-- Validation Requied -->
+        <div
+          *ngIf="
+          editStudent.get('photo')?.invalid &&
+          editStudent.get('photo')?.errors &&
+            (editStudent.get('photo')?.dirty || editStudent.get('photo')?.touched)
+          "
+        >
+          <div
+            class="form-text text-danger text-center"
+            *ngIf="editStudent.controls['photo']?.errors?.['required']"
+          >
+            {{ "students.student.add.form.photo.errorMessage" | translate }}
+          </div>
+        </div>
+        <!-- ./Validation Requied -->
+        <img
+          [src]="imageSrc"
+          alt=""
+          class="img-fluid custom-shadow d-block mx-auto"
+        />
+
+        <div class="position-absolute edit-image-btn">
+          <button class="bg-white" (click)="profileImg.click()" type="button">
+            <i class="pi pi-pencil"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- ./Image -->
+    <!-- Gender -->
+    <div class="col-12 mb-3">
+      <div class="row">
+
+        <div class="col-6" *ngFor="let gender of gender_list">
+          <div
+            class="gender border border-2 custom-br custom-shadow text-center"
+            (click)="onSelectGender(gender)"
+            [ngClass]="{
+              'text-secondary': selectedGender?.nameEn != gender?.nameEn,
+              'selected-gender': selectedGender?.nameEn == gender?.nameEn
+            }"
+          >
+            <div class="gender-info py-4">
+              <i
+                class="fs-1 text-middle"
+                [ngClass]="{
+                  'icon-male': gender.nameEn == 'male',
+                  'icon-female': gender.nameEn != 'male',
+                  'ps-3': lang == 'rtl',
+                  'pe-3': lang != 'rtl'
+                }"
+              ></i>
+              <span class="text-super text-capitalize">{{
+                lang == "rtl" ? gender.nameAr : gender.nameEn
+              }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <!-- Validation Requied -->
+          <div
+            *ngIf="
+              editStudent.get('gender')?.invalid &&
+              editStudent.get('gender')?.errors &&
+              (editStudent.get('gender')?.dirty ||
+                editStudent.get('gender')?.touched)
+            "
+          >
+            <div
+              class="form-text text-danger"
+              *ngIf="editStudent.controls['gender']?.errors?.['required']"
+            >
+              {{ "students.student.add.form.gender.errorMessage" | translate }}
+            </div>
+          </div>
+          <!-- ./Validation Requied -->
+        </div>
+      </div>
+    </div>
+    <!-- ./Gender -->
+  </div>
+  <div class="col-md-6">
+    <!-- First Name -->
+    <div class="col-12">
+      <label class="form-label d-block">{{
+        "students.student.add.form.firstname.text" | translate
+      }}</label>
+      <input
+        type="text"
+        pInputText
+        formControlName="firstname"
+        class="w-100 custom-font"
+        placeholder="{{
+          'students.student.add.form.firstname.placeholder' | translate
+        }}"
+      />
+      <!-- Validation Requied -->
+      <div
+        *ngIf="
+          editStudent.get('firstname')?.invalid &&
+          editStudent.get('firstname')?.errors &&
+          (editStudent.get('firstname')?.dirty || editStudent.get('firstname')?.touched)
+        "
+      >
+        <div
+          class="form-text text-danger"
+          *ngIf="editStudent.controls['firstname']?.errors?.['required']"
+        >
+          {{ "students.student.add.form.firstname.errorMessage" | translate }}
+        </div>
+      </div>
+      <!-- ./Validation Requied -->
+    </div>
+    <!--./First Name -->
+
+    <!-- Birthdate -->
+    <div class="col-12">
+      <label class="form-label d-block">{{
+        "students.student.add.form.birthDate.text" | translate
+      }}</label>
+      <p-calendar
+        [(ngModel)]="date"
+        formControlName="birthdate"
+        dateFormat="dd/mm/yy"
+        appendTo="body"
+        [showIcon]="true"
+        placeholder="{{
+          'students.student.add.form.birthDate.placeholder' | translate
+        }}"
+        [ngClass]="{ 'datepicker-rtl': lang == 'rtl' }"
+      ></p-calendar>
+      <!-- Validation Requied -->
+      <div
+        *ngIf="
+          editStudent.get('birthdate')?.invalid &&
+          editStudent.get('birthdate')?.errors &&
+          (editStudent.get('birthdate')?.dirty || editStudent.get('birthdate')?.touched)
+        "
+      >
+        <div
+          class="form-text text-danger"
+          *ngIf="editStudent.controls['birthdate']?.errors?.['required']"
+        >
+          {{ "students.student.add.form.birthDate.errorMessage" | translate }}
+        </div>
+      </div>
+      <!-- ./Validation Requied -->
+    </div>
+    <!-- ./Birthdate -->
+
+    <!-- Address -->
+    <div class="col-12">
+      <label class="form-label d-block">{{
+        "students.student.add.form.address.text" | translate
+      }}</label>
+      <input
+        type="text"
+        pInputText
+        formControlName="address"
+        class="w-100 custom-font"
+        placeholder="{{
+          'students.student.add.form.address.placeholder' | translate
+        }}"
+      />
+      <!-- Validation Requied -->
+      <div
+        *ngIf="
+          editStudent.get('address')?.invalid &&
+          editStudent.get('address')?.errors &&
+          (editStudent.get('address')?.dirty || editStudent.get('address')?.touched)
+        "
+      >
+        <div
+          class="form-text text-danger"
+          *ngIf="editStudent.controls['address']?.errors?.['required']"
+        >
+          {{ "students.student.add.form.address.errorMessage" | translate }}
+        </div>
+      </div>
+      <!-- ./Validation Requied -->
+    </div>
+    <!-- ./Address -->
+
+    <!-- Stages -->
+    <div class="col-12">
+      <label class="form-label">{{
+        "students.student.add.form.stage.text" | translate
+      }}</label>
+      <p-dropdown
+        [ngClass]="{ 'dropdown-rtl': lang == 'rtl' }"
+        class="dropdown-fullwidth"
+        [options]="stage_list"
+        [(ngModel)]="selectedStage"
+        [filter]="true"
+        filterBy="name"
+        [showClear]="false"
+        placeholder="{{ 'students.student.add.form.stage.placeholder' | translate }}"
+        formControlName="stage_id"
+        appendTo="body"
+      >
+        <ng-template pTemplate="selectedItem">
+          <div class="stage-item stage-item-value">
+            <div>{{ selectedStage.stage }}</div>
+          </div>
+        </ng-template>
+        <ng-template let-stage pTemplate="item">
+          <div class="stage-item">
+            <div>{{ stage.stage }}</div>
+          </div>
+        </ng-template>
+      </p-dropdown>
+      <!-- Validation Requied -->
+      <div
+        *ngIf="
+          editStudent.get('stage_id')?.invalid &&
+          editStudent.get('stage_id')?.errors &&
+          (editStudent.get('stage_id')?.dirty || editStudent.get('stage_id')?.touched)
+        "
+      >
+        <div
+          class="form-text text-danger"
+          *ngIf="editStudent.controls['stage_id']?.errors?.['required']"
+        >
+          {{ "students.student.add.form.stage.errorMessage" | translate }}
+        </div>
+      </div>
+      <!-- ./Validation Requied -->
+    </div>
+    <!-- ./Stages -->
+
+    <!-- Parent -->
+    <div class="col-12">
+      <label class="form-label"
+        >{{ "students.student.add.form.parent.text" | translate }}
+      </label>
+      <p-dropdown
+        [ngClass]="{ 'dropdown-rtl': lang == 'rtl' }"
+        class="dropdown-fullwidth"
+        [options]="parent_list"
+        [(ngModel)]="selectedParent"
+        [filter]="true"
+        filterBy="name"
+        [showClear]="false"
+        placeholder="{{ 'students.student.add.form.parent.placeholder' | translate }}"
+        formControlName="parent_id"
+        appendTo="body"
+      >
+        <ng-template pTemplate="selectedItem">
+          <div class="parent-item parent-item-value">
+            <div>
+              {{ selectedParent.first_name }}
+            </div>
+          </div>
+        </ng-template>
+        <ng-template let-parent pTemplate="item">
+          <div class="parent-item">
+            <div>{{ parent.first_name }}</div>
+          </div>
+        </ng-template>
+      </p-dropdown>
+      <!-- Validation Requied -->
+      <div
+        *ngIf="
+          editStudent.get('parent_id')?.invalid &&
+          editStudent.get('parent_id')?.errors &&
+          (editStudent.get('parent_id')?.dirty || editStudent.get('parent_id')?.touched)
+        "
+      >
+        <div
+          class="form-text text-danger"
+          *ngIf="editStudent.controls['parent_id']?.errors?.['required']"
+        >
+          {{ "students.student.add.form.parent.errorMessage" | translate }}
+        </div>
+      </div>
+      <!-- ./Validation Requied -->
+    </div>
+    <!-- ./Parent -->
+  </div>
+  <div class="col-12">
+    <button pButton type="submit" label="{{'students.student.edit.btnLabel' | translate}}" class="px-5"></button>
+  </div>
+</form>
+

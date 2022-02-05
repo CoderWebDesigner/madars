@@ -1,0 +1,115 @@
+{
+  "auth":{
+    "login":{
+      "title":"Welcome",
+      "username":"Username",
+      "password":"Password",
+      "btnLabel":"Login"
+    }
+  },
+  "header":{
+    "log_out":"Logout",
+    "searchPlaceholder":"search for student or parent .."
+  },
+  "notification":{
+    "title":"Notification"
+  },
+  "dashboardTitle":"Dashboard",
+  "chart":{
+    "line":"Expenses",
+    "pie":"Gender"
+  },
+  "modules":{
+    "title":"School categories",
+    "info":"You can manage the school through the existing departments"
+  },
+  "students":{
+    "title":"Students",
+    "empty":"No Student Found",
+    "info":{
+      "gender":"Gender",
+      "birthDate":"Birth",
+      "noBirthdateMessage":"Birthdate not exist !",
+      "phone":"Phone",
+      "noPhoneMessage":"Phone not exist !",
+      "address":"Address",
+      "noAddressMessage":"Address not exist !",
+      "mothername":"Mother name",
+      "noMothernameMessage":"Mother name  not exist !"
+    },
+    "student":{
+      "add":{
+        "btnLabel":"Add",
+        "title":"Add Student",
+        "form":{
+          "photo":{
+            "errorMessage":"Photo field Requied"
+          },
+          "firstname":{
+            "text":"Student first name",
+            "placeholder":"Ali",
+            "errorMessage":"Student firstname field Required"
+          },
+          "birthDate":{
+            "text":"Birth date",
+            "placeholder":"26/6/2000",
+            "errorMessage":"Birth date field Required"
+          },
+          "address":{
+            "text":"Address",
+            "placeholder":"Cairo,Egypt",
+            "errorMessage":"Address field Required"
+          },
+          "gender":{
+            "text":"Gender",
+            "placeholder":"Select Gender",
+            "errorMessage":"Gender field Required"
+          },
+          "parent":{
+            "text":"Parent",
+            "placeholder":"Select Parent",
+            "errorMessage":"Parent field Required"
+          },
+          "stage":{
+            "text":"Stage",
+            "placeholder":"Select Stage",
+            "errorMessage":"Stage field Required"
+          }
+        }
+      },
+      "edit":{
+        "btnLabel":"Edit",
+        "title":"Edit Student"
+      },
+      "delete":{
+        "message":"Are you Sure to delete ",
+        "btnLabel":"Delete",
+        "title":"Delete Student",
+        "cancelBtnLabel":"Cancel"
+      }
+    },
+    "attachments":{
+      "title":"Files",
+      "btnLabel":"Add File",
+      "empty":"No Attachment Found",
+      "add":{
+        "title":"Add File"
+      },
+      "edit":{
+        "title":"Edit File"
+      },
+      "delete":{
+        "title":"delete File"
+      }
+    },
+    "payments":{
+      "title":"Payment",
+      "btnLabel":"Add Payemnt",
+      "empty":"No Payment Found"
+    }
+  },
+  "confirmDialog":{
+    "title":"Confirm Delete !",
+    "delete":"Confirm Delete #"
+  }
+}

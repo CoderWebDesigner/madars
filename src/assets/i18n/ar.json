@@ -1,0 +1,118 @@
+{
+  "auth":{
+    "login":{
+      "title":"مرحبا بك",
+      "username":"اسم المستخدم",
+      "password":"كلمة المرور",
+      "btnLabel":"تسجيل الدخول"
+    }
+  },
+  "header":{
+    "log_out":"تسجيل الخروج",
+    "searchPlaceholder":"إبحث عن تلميذ او ولي امر .."
+  },
+  "notification":{
+    "title":"الاشعارات"
+  },
+  "dashboardTitle":"لوحة تحكم",
+  "chart":{
+    "line":"المصروفات",
+    "pie":"النوع"
+  },
+  "modules":{
+    "title":"الاقسام العامة لاداره المدرسة",
+    "info":"يمكنك اداره المدرسه من خلال الاقسام الموجودة"
+  },
+  "students":{
+    "title":"التلاميذ",
+    "empty":"لا يوجد تلاميذ",
+    "info":{
+      "gender":"النوع",
+      "birthDate":"تاريخ الميلاد",
+      "noBirthdateMessage":"لا يوجد تاريخ الميلاد !",
+      "phone":"الهاتف",
+      "noPhoneMessage":"لا يوجد هاتف !",
+      "address":"العنوان",
+      "noAddressMessage":"لا يوجد عنوان !",
+      "mothername":"اسم الام",
+      "noMothernameMessage":"لا يوجد اسم ام !"
+    },
+    "student":{
+      "add":{
+        "btnLabel":"إضافة",
+        "title":"اضافة تلميذ",
+        "form":{
+          "photo":{
+            "errorMessage":"حقل الصوره مطلوب"
+          },
+          "firstname":{
+            "text":"اسم الطالب الاول",
+            "placeholder":"علي ",
+            "errorMessage":"حقل اسم الطالب الاول مطلوب"
+          },
+          "birthDate":{
+            "text":"تاريخ الميلاد",
+            "placeholder":"26/6/2000",
+            "errorMessage":"حقل تاريخ الميلاد مطلوب"
+          },
+          "address":{
+            "text":"العنوان",
+            "placeholder":"القاهره , مصر ",
+            "errorMessage":"حقل العنوان مطلوب"
+          },
+          "gender":{
+            "text":"النوع",
+            "placeholder":"إختيار النوع",
+            "errorMessage":"حقل اختيار النوع مطلوب"
+
+          },
+          "parent":{
+            "text":"ولي الامر",
+            "placeholder":"إختيار ولي الامر",
+            "errorMessage":"حقل ولي الامر مطلوب"
+
+          },
+          "stage":{
+            "text":"مرحلة دراسية",
+            "placeholder":"إختيار مرحلة دراسية",
+            "errorMessage":"حقل المرحلة الدراسية مطلوب"
+
+          }
+        }
+      },
+      "edit":{
+        "btnLabel":"تعديل",
+        "title":"تعديل طالب"
+      },
+      "delete":{
+        "message":"هل متاكد من مسح ",
+        "btnLabel":"مسح",
+        "title":"مسح طالب",
+        "cancelBtnLabel":"إلغاء"
+      }
+    },
+    "attachments":{
+      "title":"الملفات",
+      "btnLabel":"إضافة ملف",
+      "empty":"لا يوجد ملفات",
+      "add":{
+        "title":"إضافة ملف"
+      },
+      "edit":{
+        "title":"تعديل ملف"
+      },
+      "delete":{
+        "title":"مسح ملف"
+      }
+    },
+    "payments":{
+      "title":"الدفعات",
+      "btnLabel":"إضافة دفعة",
+      "empty":"لا يوجد دفعات"
+    }
+  },
+  "confirmDialog":{
+    "title":"تاكيد مسح !",
+    "delete":"تاكيد مسح عنصر رقم # "
+  }
+}

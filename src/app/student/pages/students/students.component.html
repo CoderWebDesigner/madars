@@ -1,0 +1,76 @@
+<h4 class="mb-4">
+  {{ "students.title" | translate }}
+  <div [ngClass]="{'float-start': lang == 'rtl', 'float-end': lang == 'ltr'  }">
+    <button
+    pButton
+    type="button"
+    label="{{'students.student.add.btnLabel' | translate}}"
+    class="p-button-success custom-br custom-shadow"
+    icon="pi pi-user-plus"
+    (click)="opendialog('add')"
+  ></button>
+  </div>
+
+</h4>
+<!-- Student -->
+<p-dataView
+  #dv
+  [value]="students"
+  [paginator]="students.length != 0"
+  [rows]="8"
+  filterBy="name"
+  layout="grid"
+  [ngClass]="{ 'dataview-rtl': lang == 'rtl' }"
+  [loading]="loading"
+>
+  <ng-template let-student pTemplate="gridItem">
+    <div class="col-3">
+      <app-student
+        [student]="student"
+        (getDialogType)="getType($event)"
+        (getStudentId)="getId($event)"
+      ></app-student>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="loadingbody">
+    <div class="col-3">
+      <p-skeleton></p-skeleton>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="empty">
+    <div class="empty text-center">
+      <h2>{{ "students.empty" | translate }}</h2>
+      <img
+        src="../../../../assets/images/no-students.jpg"
+        alt=""
+        class="img-fluid"
+      />
+    </div>
+  </ng-template>
+</p-dataView>
+<!-- ./Students -->
+
+<!-- Dialog -->
+<app-dialog
+  [display]="display"
+  [dialogHeader]="
+    dialogType == 'add'
+      ? ('students.student.add.title' | translate)
+      : dialogType == 'edit'
+      ? ('students.student.edit.title' | translate)
+      : ('students.student.delete.title' | translate)
+  "
+  [width]="(dialogType == 'delete')?'30vw':''"
+  [titleColor] ="(dialogType == 'delete')? '#ff6666':''"
+>
+  <ng-container *ngIf="dialogType == 'add'">
+    <app-addstudent></app-addstudent>
+  </ng-container>
+  <ng-container *ngIf="dialogType == 'edit'">
+    <app-editstudent [id]="studentId"></app-editstudent>
+  </ng-container>
+  <ng-container *ngIf="dialogType == 'delete'">
+    <app-deletestudent [studentId]="studentId"></app-deletestudent>
+  </ng-container>
+</app-dialog>
+<!-- ./Dialog -->

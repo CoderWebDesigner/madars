@@ -1,0 +1,167 @@
+.student {
+  &-icon {
+    background: $greyColor;
+    margin-bottom: 20px;
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      padding: 10px;
+      background: #fff;
+    }
+  }
+
+  &-name {
+    p {
+      font-size: 14px !important;
+      color: #b8b8b8 !important;
+    }
+  }
+
+  &-attendance {
+    span {
+      font-size: 14px !important;
+    }
+  }
+
+  i {
+    color: #b8b8b8 !important;
+  }
+
+  &-info {
+    .label {
+      color: #b8b8b8 !important;
+    }
+
+    .gender {
+      font-size: 40px;
+    }
+
+    .files {
+      height: 270px
+    }
+
+    .payment {
+      height: 336px;
+    }
+
+    .file {
+      box-shadow: 1px 1px 3px #ddd;
+
+      &-info {
+        font-size: 14px;
+
+      }
+
+      &-size {
+        color: #b8b8b8 !important
+      }
+
+
+      &-proccess {
+        opacity: 0;
+        transition: opacity .4s ease-in-out;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background: #fff;
+        button,a {
+          display: inline-block;
+          background: #fff;
+          width: 30px;
+          height: 30px;
+          line-height: 19px;
+          border-radius: 50%;
+          border: 1px solid #ddd;
+          text-align: center;
+          cursor: pointer;
+          i {
+            font-size: 13px;
+          }
+        }
+
+        &-rtl {
+          right: auto !important;
+          left: 0 !important;
+        }
+      }
+
+      &:hover {
+        .file-proccess {
+          opacity: 1;
+        }
+      }
+    }
+
+    th,
+    td {
+      font-size: 14px;
+      padding: 10px 5px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .total {
+      font-size: 14px;
+    }
+  }
+
+  &-proccess {
+    right: 10px;
+    top: 30px;
+
+    .dropdown-menu {
+      min-width: 7rem !important;
+    }
+
+    .dropdown-menu.show {
+      inset: 100% -90px auto auto !important;
+    }
+
+    .dropdown-menu.dropdown-ltr.show {
+      inset: 100% auto auto -85px !important;
+    }
+  }
+
+  .dropdown-rtl {
+    right: auto !important;
+    left: 10px !important;
+  }
+}
+
+.empty {
+  img {
+    width: 200px;
+
+    filter: grayscale(100%);
+  }
+}
+
+.gender {
+  cursor: pointer;
+
+  input[type=radio]:checked+label>img {
+    border: 20px solid rgb(228, 207, 94);
+  }
+}
+
+.selected-gender {
+  border-color: $goldColor !important;
+  color: $goldColor;
+  background: rgba($goldColor, .1);
+}
+
+.edit-image-btn {
+  bottom: 20px;
+  right: 110px;
+
+  button {
+    background: #fff;
+    color: grey;
+    border: 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+}
